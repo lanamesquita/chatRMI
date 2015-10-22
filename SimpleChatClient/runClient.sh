@@ -1,0 +1,1 @@
+java -cp /home/lana/workspaceChat/SimpleChatClient/bin -Djava.security.policy=client.policy ChatClient

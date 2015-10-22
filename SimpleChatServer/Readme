@@ -1,0 +1,27 @@
+Atividade:
+Implementar  uma  aplicação  de  chat  (bate-papo)  utilizando  Java  RMI.  A  aplicação deve  ser  composta por um servidor que aceitará conexões de vários clientes usados pelos usuários do  sistema.  Para  se  conectar  ao  servidor,  cada  cliente deverá  indicar  o  host  e  a  porta  onde  o  serviço de nomes está em execução, juntamente com um apelido (nickname) do usuário. Uma  vez conectado,  clientes podem postar mensagens no servidor, que enviará as mensagens para  cada cliente conectado via call-back. O servidor deverá guardar a ordem em que as mensagens  chegam ao  servidor por meio  de  um  contador, e  quando  forem  reenviadas  para  os  clientes,  deverão seguir o modelo: Mensagem <Número Mensagem> – <Nickname do Autor>: Mensagem O sistema deverá tratar a desconexão de um cliente, sem que os demais clientes sem afetados.  Os clientes também ser informados sobre quais são os usuários presentes no chat.
+
+
+
+Detalhes de implementação e aplicação:
+
+- pra compilar Servidor
+	javac -d bin -cp src/ src/Chat.java src/ChatServer.java
+- pra compilar Cliente
+	javac -d bin -cp src/ src/Chat.java src/ChatClient.java
+
+- rodar o rmiregistry dentro da pasta do server
+
+- rodar rmic para o Chat no Cliente e no Servidor
+	cd bin && rmic Chat && cd ..
+
+- rodar os programas com:
+	java -cp /home/lana/workspaceChat/SimpleChatServer/bin -Djava.security.policy=server.policy ChatServer
+	     
+	java -cp /home/lana/workspaceChat/SimpleChatClient/bin -Djava.security.policy=client.policy ChatClient
+
+- para rodar os comandos acima usar:
+	sh run.sh - para o servidor
+
+	sh run.sh - para o primeiro cliente
+	sh runCliente.sh - para os próximos clientes
